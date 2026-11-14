@@ -60,8 +60,11 @@ Infrastructure as Code, CI/CD & Release, Observability, Languages & Runtimes, Da
 **Validation**:
 - The `AI & Computer Vision` group is mandatory and must appear in navigation before Experience
   (FR-004).
-- Every AI member must be backed by an `evidence` phrase; AI claims without CV support are
-  forbidden (FR-005).
+- Every AI member must be backed by an `evidence` phrase; AI claims without support are forbidden
+  (FR-005). Acceptable support is either the source CV or work the owner published under his own
+  name (blog articles, open-source repositories), which the owner supplied on 2026-11-14:
+  TorchServe model serving, KEDA-based autoscaling of inference workloads, and the `maia-llm`
+  open-source project.
 - No group may contain an unbroken list longer than 12 members; split or group instead (FR-019).
 - Total skill groups ≤ 8 to keep the section scannable.
 

@@ -218,6 +218,25 @@ Single-author content, so parallel work is limited to distinct files: one contri
 
 ## Notes
 
+### Implementation Notes (2026-11-14)
+
+- **Experience count corrected** from 9 to 8 after comparing against the source DOCX; the extra
+  engagements are modeled as `SideVenture`.
+- **Lighthouse/axe (T039) not run**: no Chrome/Chromium binary on the build machine. Contrast
+  (17.7:1 body, 7.6:1 muted), heading order, landmarks, link text, focus visibility, section
+  labelling and overflow at 320 px were verified programmatically instead.
+- **Owner-supplied AI evidence added post-implementation** (same day): three blog articles
+  (TorchServe model serving, TorchServe scaling on Kubernetes with KEDA, T-shape to O-shape) and
+  the `maia-llm` open-source project now appear in `#ai-skills` under "Writing & open source".
+  Beyond Work gained blogging, open source and advanced home automation. This is the FR-005
+  allowance for owner-supplied additions; the served markup never states an AI claim the owner
+  has not published.
+- **Email**: rendered as inert `[at]` text in the served HTML and upgraded to a `mailto:` link by
+  `assets/js/enhance.js`, so no machine-readable address is present in the source.
+- **Social card**: `assets/img/og-card.png` is generated from `assets/img/og-card.svg`; the build
+  machine had no system fonts, so rendering required `FONTCONFIG_FILE` pointing at a temporary
+  fontconfig directory.
+
 - `[P]` tasks touch different files with no dependencies
 - `[Story]` labels map tasks to the spec's user stories for traceability
 - The whole site is one HTML file, so most content tasks are sequential by necessity

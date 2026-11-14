@@ -422,6 +422,41 @@ strong {
   text-transform: uppercase;
 }
 
+.subsection-title {
+  margin: var(--space-5) 0 var(--space-2);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
+.link-list {
+  display: grid;
+  gap: 0;
+  max-width: var(--measure);
+}
+
+.link-list li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.link-list li:last-child {
+  border-bottom: 0;
+}
+
+.link-list a {
+  font-weight: 600;
+}
+
+.link-note {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
 /* ---------- Skill groups ---------- */
 .skill-groups {
   display: grid;
