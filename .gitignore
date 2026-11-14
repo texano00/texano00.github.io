@@ -1,0 +1,21 @@
+# Static site published from the repository root (GitHub user site)
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Node tooling used only for local audits (html-validate, lighthouse)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# Local preview and audit output
+.cache/
+coverage/
+lighthouse-report*
+*.local
+.env
+.env.*
