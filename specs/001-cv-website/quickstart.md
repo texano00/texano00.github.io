@@ -12,7 +12,8 @@ success criterion. No implementation code here — see `plan.md`, `data-model.md
   `https://github.com/texano00/texano00.github.io.git`)
 - Python 3 (for a local static server) — `python3 --version`
 - Node.js 18+ **only** if you want the automated audits (`npx html-validate`, `npx lighthouse`)
-- Source of truth for content: `Bacciarini Yuri - CV.docx` (and its PDF rendering)
+- Source of truth for content: the official Google Doc linked from the page, mirrored locally as
+  `assets/cv/yuri-bacciarini-cv.docx`
 
 ---
 
@@ -116,8 +117,8 @@ a page break, no clipped text.
 
 1. Click the CV download link.
 
-**Expected**: saves `yuri-bacciarini-cv.pdf` from `/assets/cv/`; the DOCX link saves the source
-document; both open correctly outside the browser.
+**Expected**: the "Open the official CV" link resolves to the Google Doc; the Word link saves
+`yuri-bacciarini-cv.docx` from `/assets/cv/` and opens correctly outside the browser.
 
 ---
 
@@ -130,7 +131,7 @@ git add -A && git commit -m "feat: publish CV website" && git push origin main
 curl -I  https://texano00.github.io/
 curl -s  https://texano00.github.io/ | grep -c '<section'
 curl -I  https://texano00.github.io/assets/css/styles.css
-curl -I  https://texano00.github.io/assets/cv/yuri-bacciarini-cv.pdf
+curl -I  https://texano00.github.io/assets/cv/yuri-bacciarini-cv.docx
 curl -I  https://texano00.github.io/no-such-page
 ```
 

@@ -236,6 +236,11 @@ Single-author content, so parallel work is limited to distinct files: one contri
 - **Social card**: `assets/img/og-card.png` is generated from `assets/img/og-card.svg`; the build
   machine had no system fonts, so rendering required `FONTCONFIG_FILE` pointing at a temporary
   fontconfig directory.
+- **CV link is external** (owner request, 2026-11-14): the page now links the official Google Doc
+  (`docs.google.com/document/d/12EyI4fLhahsGvDl3avVvwXqUk6pJqJ3SpasptYkpA8Y/…`) instead of a
+  repository copy, and `assets/cv/yuri-bacciarini-cv.pdf` was deleted. The Word copy remains as
+  the only in-repo artifact. Supersedes the PDF references in T003/T023 and
+  `contracts/publishing-contract.md` §2.
 
 - `[P]` tasks touch different files with no dependencies
 - `[Story]` labels map tasks to the spec's user stories for traceability

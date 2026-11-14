@@ -111,8 +111,7 @@ assets/
 ├── img/
 │   └── og-card.png            # Social preview image
 └── cv/
-    ├── yuri-bacciarini-cv.pdf  # URL-safe download (from repo-root PDF)
-    └── yuri-bacciarini-cv.docx # URL-safe download (from repo-root DOCX)
+    └── yuri-bacciarini-cv.docx # URL-safe Word copy (official CV is a Google Doc)
 
 specs/                         # Spec Kit artifacts (served but unlinked)
 .specify/                      # Spec Kit configuration (not published as a page)

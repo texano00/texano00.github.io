@@ -23,8 +23,8 @@ be verified without reading the implementation.
 |---|---|---|
 | `index.html` | The published page | yes |
 | `assets/css/styles.css` | Styles (tokens, layout, print, dark mode) | yes |
-| `assets/cv/yuri-bacciarini-cv.pdf` | Downloadable CV | yes |
-| `assets/cv/yuri-bacciarini-cv.docx` | Downloadable CV source document | yes |
+| `assets/cv/yuri-bacciarini-cv.docx` | Downloadable Word copy of the CV | yes |
+| Official CV (Google Docs) | External canonical CV linked from the page | yes |
 | `.nojekyll` | Serve files verbatim, skip Jekyll | yes |
 | `favicon.svg` | Browser icon | yes |
 | `404.html` | Fallback for unknown paths | yes |
@@ -65,7 +65,8 @@ A publish is considered valid only when all checks pass against the **live** ori
 | Reachability | `curl -I https://texano00.github.io/` | `HTTP/2 200`, valid certificate, no redirect loop |
 | Content present | `curl -s https://texano00.github.io/ \| grep -c '<section'` | ≥ 10 sections |
 | Assets resolve | `curl -I https://texano00.github.io/assets/css/styles.css` | `200`, `content-type: text/css` |
-| Download resolves | `curl -I https://texano00.github.io/assets/cv/yuri-bacciarini-cv.pdf` | `200`, `content-type: application/pdf` |
+| Download resolves | `curl -I https://texano00.github.io/assets/cv/yuri-bacciarini-cv.docx` | `200`, `content-type` for a Word document |
+| Official CV link | page contains the Google Docs URL with `&ref=yuribacciarini.com` | present in header and contact block |
 | No Jekyll interference | `curl -I https://texano00.github.io/.nojekyll` (or check render fidelity) | Files served as committed |
 | Freshness | compare footer `Last updated` with merge date | Same day |
 | 404 fallback | `curl -I https://texano00.github.io/no-such-page` | `404` with the custom page body |
