@@ -12,8 +12,8 @@ success criterion. No implementation code here — see `plan.md`, `data-model.md
   `https://github.com/texano00/texano00.github.io.git`)
 - Python 3 (for a local static server) — `python3 --version`
 - Node.js 18+ **only** if you want the automated audits (`npx html-validate`, `npx lighthouse`)
-- Source of truth for content: the official Google Doc linked from the page, mirrored locally as
-  `assets/cv/yuri-bacciarini-cv.docx`
+- Source of truth for content: the official Google Doc linked from the page. No CV file is stored
+  in the repository.
 
 ---
 
@@ -113,12 +113,13 @@ a page break, no clipped text.
 
 ---
 
-## 9. Download channel (FR-008)
+## 9. CV link (FR-008)
 
-1. Click the CV download link.
+1. Click the CV link in the header, then the one in the Contact section.
 
-**Expected**: the "Open the official CV" link resolves to the Google Doc; the Word link saves
-`yuri-bacciarini-cv.docx` from `/assets/cv/` and opens correctly outside the browser.
+**Expected**: both open the official Google Doc
+(`docs.google.com/document/d/12EyI4fLhahsGvDl3avVvwXqUk6pJqJ3SpasptYkpA8Y/…`) in a new tab. No CV
+file is served from the site: `curl -I https://texano00.github.io/assets/cv/…` must return `404`.
 
 ---
 
@@ -131,13 +132,14 @@ git add -A && git commit -m "feat: publish CV website" && git push origin main
 curl -I  https://texano00.github.io/
 curl -s  https://texano00.github.io/ | grep -c '<section'
 curl -I  https://texano00.github.io/assets/css/styles.css
-curl -I  https://texano00.github.io/assets/cv/yuri-bacciarini-cv.docx
+curl -I  https://texano00.github.io/assets/cv/yuri-bacciarini-cv.docx   # expect 404
+curl -s  https://texano00.github.io/ | grep -c 'docs.google.com/document'
 curl -I  https://texano00.github.io/no-such-page
 ```
 
-**Expected**: `200` for page, CSS, and PDF; ≥ 10 `<section>` elements; `404` with the custom body
-for the unknown path; footer `Last updated` equals the merge date. Full matrix in
-`contracts/publishing-contract.md` §6.
+**Expected**: `200` for page and CSS; `404` for any CV file path; at least one Google Docs link in
+the markup; ≥ 10 `<section>` elements; `404` with the custom body for the unknown path; footer
+`Last updated` equals the merge date. Full matrix in `contracts/publishing-contract.md` §6.
 
 ---
 
@@ -157,6 +159,6 @@ Ask 5 reviewers (peers or recruiters) to open the live URL for 30 seconds withou
 |---|---|---|
 | Page 404 on `https://texano00.github.io/` | Pages source not set to `main` / root | Repo Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)` |
 | Styles missing after publish | Asset paths written as `/my-cv/...` or `./site/...` | Use root-absolute `/assets/...` paths |
-| Download link 404s | CV files not moved to `assets/cv/` | Verify the file exists with the URL-safe name |
+| CV link broken | Google Doc sharing changed | Re-share the document as "anyone with the link" and re-check the URL in `index.html` |
 | Jekyll mangles underscores | `.nojekyll` missing | Add `.nojekyll` at repo root |
 | Stale content after merge | Pages build still running | Wait up to 5 minutes; check the Pages deployment status |

@@ -96,8 +96,8 @@ print to PDF; verify layout, content availability, and legibility in each case.
    and page-break-safe entries.
 4. **Given** the visitor prefers a dark interface, **When** their system preference is dark,
    **Then** the page presents a dark presentation by default while keeping the same readability.
-5. **Given** the visitor wants the original artifact, **When** they activate the download link,
-   **Then** the CV file from the repository is downloaded.
+5. **Given** the visitor wants the current CV document, **When** they activate the CV link,
+   **Then** the official CV opens in its hosted document.
 
 ---
 
@@ -115,7 +115,7 @@ print to PDF; verify layout, content availability, and legibility in each case.
 - **Very long role history on print**: entries must not split awkwardly across pages.
 - **Visitor with reduced motion or keyboard-only navigation**: decorative motion must be
   suppressible and all interactive elements must be reachable and visibly focused.
-- **Content drift** between the downloadable CV file and the rendered page must be detectable by
+- **Content drift** between the official CV document and the rendered page must be detectable by
   the owner (visible last-updated date).
 - **Trailing format artifacts in the source document** (stray numbers, symbols, broken headings)
   must not appear on the page.
@@ -145,7 +145,8 @@ print to PDF; verify layout, content availability, and legibility in each case.
 - **FR-007**: The site MUST expose every contact and social channel from the CV (email, blog,
   LinkedIn, GitHub, Twitter/X, location, remote/travel availability), with URLs intact and the
   email protected using the CV's human-readable `[at]` convention.
-- **FR-008**: The site MUST provide a download of the original CV file stored in the repository.
+- **FR-008**: The site MUST link directly to the official CV document hosted externally, and MUST
+  NOT store or serve a duplicate copy of the CV from the repository.
 - **FR-009**: The site MUST be publicly reachable over HTTPS at its published address with no
   authentication.
 - **FR-010**: The site MUST publish automatically from the repository's default branch, so that
@@ -213,7 +214,7 @@ print to PDF; verify layout, content availability, and legibility in each case.
 - The CV owner is a single individual (Yuri Bacciarini); this is a personal profile, not a
   multi-user product.
 - The Word/PDF files at the repository root are the authoritative source of facts and remain in
-  the repository as downloadable artifacts.
+  the owner's Google Docs account, which the page links to as the canonical CV.
 - The site is presented in English, matching the source document.
 - Hosting is the static site publishing facility of the repository's code host (GitHub Pages),
   served over HTTPS under the repository owner's account; the public repository is the deployment

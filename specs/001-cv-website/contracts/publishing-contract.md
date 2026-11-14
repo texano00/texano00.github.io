@@ -23,8 +23,7 @@ be verified without reading the implementation.
 |---|---|---|
 | `index.html` | The published page | yes |
 | `assets/css/styles.css` | Styles (tokens, layout, print, dark mode) | yes |
-| `assets/cv/yuri-bacciarini-cv.docx` | Downloadable Word copy of the CV | yes |
-| Official CV (Google Docs) | External canonical CV linked from the page | yes |
+| Official CV (Google Docs) | External canonical CV linked from the page — no in-repo copy | yes |
 | `.nojekyll` | Serve files verbatim, skip Jekyll | yes |
 | `favicon.svg` | Browser icon | yes |
 | `404.html` | Fallback for unknown paths | yes |
@@ -45,8 +44,8 @@ be verified without reading the implementation.
 
 - All internal references are **root-absolute** (`/assets/css/styles.css`, `#experience`) or
   document-relative; no `./site/` or `/my-cv/` prefixes.
-- No URL in the repository may contain spaces or parentheses — hence the CV binaries live at
-  `assets/cv/yuri-bacciarini-cv.*`.
+- No URL in the repository may contain spaces or parentheses, and no CV file is published from
+  the repository at all: the CV lives in Google Docs and the page links to it.
 - Canonical link points to `https://texano00.github.io/`.
 - Download links use the `download` attribute with a human-readable filename.
 
@@ -65,8 +64,8 @@ A publish is considered valid only when all checks pass against the **live** ori
 | Reachability | `curl -I https://texano00.github.io/` | `HTTP/2 200`, valid certificate, no redirect loop |
 | Content present | `curl -s https://texano00.github.io/ \| grep -c '<section'` | ≥ 10 sections |
 | Assets resolve | `curl -I https://texano00.github.io/assets/css/styles.css` | `200`, `content-type: text/css` |
-| Download resolves | `curl -I https://texano00.github.io/assets/cv/yuri-bacciarini-cv.docx` | `200`, `content-type` for a Word document |
 | Official CV link | page contains the Google Docs URL with `&ref=yuribacciarini.com` | present in header and contact block |
+| No CV copy published | `curl -I https://texano00.github.io/assets/cv/yuri-bacciarini-cv.docx` | `404` |
 | No Jekyll interference | `curl -I https://texano00.github.io/.nojekyll` (or check render fidelity) | Files served as committed |
 | Freshness | compare footer `Last updated` with merge date | Same day |
 | 404 fallback | `curl -I https://texano00.github.io/no-such-page` | `404` with the custom page body |

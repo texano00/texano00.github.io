@@ -107,6 +107,8 @@ All Technical Context unknowns are resolved below. No `NEEDS CLARIFICATION` rema
   (FR-020). The download must survive renames, so the link uses the new path only.
 - **Alternatives considered**: Percent-encoding the existing names — rejected (fragile, ugly in
   the address bar); copying — rejected (duplicate artifacts).
+- **Superseded (2026-11-14)**: the owner moved the canonical CV to Google Docs and asked for all
+  in-repo copies to be removed, so the page now links the external document only.
 
 ## R10. Validation tooling
 

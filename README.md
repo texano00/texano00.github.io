@@ -23,7 +23,6 @@ favicon.svg
 assets/css/styles.css       # design tokens, layout, responsive, dark mode, print
 assets/js/enhance.js        # optional enhancements (theme toggle, mailto upgrade)
 assets/img/og-card.png      # social preview card (source: og-card.svg)
-assets/cv/                  # Word copy of the CV (official CV lives in Google Docs)
 specs/001-cv-website/       # spec, plan, research, data model, contracts, tasks
 ```
 
@@ -31,8 +30,8 @@ specs/001-cv-website/       # spec, plan, research, data model, contracts, tasks
 
 1. Edit the relevant `<section>` in `index.html` — it is the single source of truth for page
    content.
-2. Replace `assets/cv/yuri-bacciarini-cv.docx` if the downloadable copy changed, and update the
-   official Google Doc — the site links to it as the single living version of the CV.
+2. The CV itself lives in Google Docs — the page links to it as the single living version. No CV
+   file is stored in this repository.
 3. Update the footer date (`<time datetime="...">`) so readers can see freshness.
 4. Commit and push to `main`. GitHub Pages redeploys automatically within a few minutes.
 

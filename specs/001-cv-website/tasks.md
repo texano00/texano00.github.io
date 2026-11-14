@@ -241,6 +241,9 @@ Single-author content, so parallel work is limited to distinct files: one contri
   repository copy, and `assets/cv/yuri-bacciarini-cv.pdf` was deleted. The Word copy remains as
   the only in-repo artifact. Supersedes the PDF references in T003/T023 and
   `contracts/publishing-contract.md` §2.
+- **All in-repo CV copies removed** (owner follow-up, same day): `assets/cv/yuri-bacciarini-cv.docx`
+  deleted too; the `assets/cv/` directory no longer exists. FR-008 now forbids publishing a copy
+  of the CV from the repository — the Google Doc is the only destination.
 
 - `[P]` tasks touch different files with no dependencies
 - `[Story]` labels map tasks to the spec's user stories for traceability

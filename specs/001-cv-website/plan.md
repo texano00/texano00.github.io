@@ -108,10 +108,8 @@ assets/
 │   └── styles.css             # Design tokens, layout, responsive, print, dark mode
 ├── js/
 │   └── enhance.js             # Optional: theme toggle, mailto assembly (progressively enhanced)
-├── img/
-│   └── og-card.png            # Social preview image
-└── cv/
-    └── yuri-bacciarini-cv.docx # URL-safe Word copy (official CV is a Google Doc)
+└── img/
+    └── og-card.png             # Social preview image
 
 specs/                         # Spec Kit artifacts (served but unlinked)
 .specify/                      # Spec Kit configuration (not published as a page)
@@ -123,8 +121,8 @@ specs/                         # Spec Kit artifacts (served but unlinked)
 the only file needed for `https://texano00.github.io/` to work, and no build or deploy artifact
 is required. The alternative (generator + `dist/` + Actions deploy) was rejected: it adds a Node
 toolchain, a CI workflow, and a build step for a one-page document, while the spec explicitly
-requires owner-maintainability and no manual steps. CV binaries move to `assets/cv/` with
-URL-safe names so the download link contains no spaces or parentheses.
+requires owner-maintainability and no manual steps. No CV file is published from the repository:
+CV binaries were removed and the page links to the official Google Doc instead.
 
 ## Complexity Tracking
 

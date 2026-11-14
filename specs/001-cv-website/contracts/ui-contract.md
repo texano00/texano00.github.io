@@ -66,7 +66,7 @@ Rules:
 | Community | fundraising participation + link | ≥ 1 |
 | Beyond Work | hobbies and interest links | ≥ 3 statements |
 | Contact | email (`[at]` form), blog, LinkedIn, GitHub, Twitter/X | 5 channels |
-| Download | link to the CV file under `assets/cv/` | ≥ 1 file |
+| CV link | official CV document, hosted externally, opened in a new tab | ≥ 1 link |
 | Footer | `Last updated: YYYY-MM-DD` | 1 |
 
 Prohibited content: any figure, employer, date, or credential not present in the source CV
@@ -112,5 +112,5 @@ Prohibited content: any figure, employer, date, or credential not present in the
 ## 9. Performance contract
 
 - Zero third-party requests; no webfonts, no analytics, no CDN.
-- HTML + CSS + optional JS ≤ 300 KB uncompressed, excluding `assets/cv/*` and the social image.
+- HTML + CSS + optional JS ≤ 300 KB uncompressed, excluding the social image.
 - First contentful readability within 2 s on a throttled 4G mobile profile (SC-003).
